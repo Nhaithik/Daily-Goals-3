@@ -1,4 +1,4 @@
-// LOGIN FUNCTION
+// ================= LOGIN =================
 function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -11,13 +11,21 @@ function login() {
   }
 }
 
-// LOGOUT FUNCTION
+// ================= LOGOUT =================
 function logout() {
   sessionStorage.removeItem("loggedIn");
-  window.location.href = "login.html";
+  window.location.href = "index.html";
 }
 
-// NAVIGATION
+// ================= AUTH CHECK =================
+// Call this on protected pages
+function checkLogin() {
+  if (!sessionStorage.getItem("loggedIn")) {
+    window.location.href = "index.html";
+  }
+}
+
+// ================= NAVIGATION =================
 function goDashboard() {
   window.location.href = "dashboard.html";
 }
@@ -30,14 +38,22 @@ function goProfile() {
   window.location.href = "profile.html";
 }
 
-// PROFILE SAVE (Frontend Demo)
+// ================= PROFILE SAVE =================
 function saveProfile() {
   const name = document.getElementById("name").value;
   localStorage.setItem("username", name);
   alert("Profile saved successfully!");
 }
 
-// PROFILE IMAGE PREVIEW
+// ================= LOAD PROFILE NAME =================
+function loadProfile() {
+  const savedName = localStorage.getItem("username");
+  if (savedName && document.getElementById("name")) {
+    document.getElementById("name").value = savedName;
+  }
+}
+
+// ================= PROFILE IMAGE PREVIEW =================
 function loadImage(event) {
   const preview = document.getElementById("preview");
   preview.src = URL.createObjectURL(event.target.files[0]);
