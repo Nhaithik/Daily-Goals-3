@@ -1,4 +1,4 @@
-// ---------- LOGIN ----------
+// ========= LOGIN =========
 function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -11,20 +11,20 @@ function login() {
   }
 }
 
-// ---------- CHECK LOGIN ----------
+// ========= CHECK LOGIN =========
 function checkLogin() {
   if (!sessionStorage.getItem("loggedIn")) {
     window.location.href = "login.html";
   }
 }
 
-// ---------- LOGOUT ----------
+// ========= LOGOUT =========
 function logout() {
   sessionStorage.removeItem("loggedIn");
   window.location.href = "login.html";
 }
 
-// ---------- NAVIGATION ----------
+// ========= NAVIGATION =========
 function goDashboard() {
   window.location.href = "dashboard.html";
 }
@@ -41,10 +41,10 @@ function goSettings() {
   window.location.href = "settings.html";
 }
 
-// ---------- NEW TASK MODAL ----------
+// ========= NEW TASK MODAL =========
 function openNewTask() {
   const modal = document.getElementById("newTaskModal");
-  if (modal) modal.style.display = "block";
+  if (modal) modal.style.display = "flex";
 }
 
 function closeNewTask() {
