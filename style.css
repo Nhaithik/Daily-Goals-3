@@ -1,0 +1,19 @@
+body { margin:0; font-family:Arial; background:#f7f6f3; }
+
+/* LOGIN */
+.login-wrapper{display:flex;height:100vh;}
+.login-image img{width:400px;}
+.login-card{margin:auto;background:#fff;padding:40px;border-radius:20px;}
+
+/* DASHBOARD */
+.dashboard{display:flex;height:100vh;}
+.sidebar{width:220px;background:#fff;padding:20px;}
+.sidebar li{padding:10px;cursor:pointer;}
+.sidebar .active{background:#ffe600;border-radius:8px;}
+.main{flex:1;padding:20px;}
+.topbar{display:flex;justify-content:space-between;}
+.profile-pic{width:40px;border-radius:50%;}
+.card{background:#fff;padding:20px;border-radius:20px;margin-bottom:20px;}
+.new-task{background:#ffe600;border:none;padding:10px 20px;border-radius:20px;}
+.big-profile{width:120px;border-radius:20px;}
+.save-btn{background:#ffe600;border:none;padding:10px;border-radius:20px;}
