@@ -58,3 +58,12 @@ function loadImage(event) {
   const preview = document.getElementById("preview");
   preview.src = URL.createObjectURL(event.target.files[0]);
 }
+// ================= NEW TASK MODAL =================
+function openNewTask() {
+  document.getElementById("newTaskModal").style.display = "block";
+}
+
+function closeNewTask() {
+  document.getElementById("newTaskModal").style.display = "none";
+}
+
