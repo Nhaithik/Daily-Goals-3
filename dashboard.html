@@ -1,35 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dashboard – Daily Goals</title>
+  <meta charset="UTF-8">
+  <title>Daily Goals – Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body class="dashboard-body">
-
-<div class="dashboard">
+<div class="app">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <h2>Daily Goals</h2>
     <ul>
-      <li class="active">Dashboard</li>
+      <li class="active" onclick="goDashboard()">Dashboard</li>
       <li onclick="goTasks()">My tasks</li>
+      <li onclick="goProfile()">Profile</li>
+      <li onclick="goSettings()">Settings</li>
       <li>Notifications</li>
       <li onclick="logout()">Log out</li>
     </ul>
   </aside>
 
-  <!-- MAIN -->
-  <main class="main">
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
     <!-- TOP BAR -->
-    <div class="topbar">
+    <div class="top-bar">
       <input type="text" placeholder="Search">
       <button class="new-task-btn" onclick="openNewTask()">+ New task</button>
     </div>
 
-    <!-- DASHBOARD CONTENT -->
+    <!-- CARDS -->
     <div class="card">📅 Calendar</div>
     <div class="card">📋 My tasks</div>
     <div class="card">🔥 My streaks</div>
@@ -38,10 +40,9 @@
   </main>
 </div>
 
-<!-- ================= NEW TASK MODAL ================= -->
+<!-- NEW TASK MODAL -->
 <div id="newTaskModal" class="modal">
   <div class="modal-content">
-
     <h2>New Task</h2>
 
     <input type="text" placeholder="Title">
@@ -70,11 +71,9 @@
       <button onclick="closeNewTask()">Cancel</button>
       <button class="yellow-btn">Add Task</button>
     </div>
-
   </div>
 </div>
 
 <script src="script.js"></script>
-<script>checkLogin();</script>
 </body>
 </html>
