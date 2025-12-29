@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard</title>
+  <title>Dashboard – Daily Goals</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="dashboard-body">
 
 <div class="dashboard">
@@ -15,7 +16,6 @@
       <li class="active">Dashboard</li>
       <li onclick="goTasks()">My tasks</li>
       <li>Notifications</li>
-      <li>Settings</li>
       <li onclick="logout()">Log out</li>
     </ul>
   </aside>
@@ -23,32 +23,58 @@
   <!-- MAIN -->
   <main class="main">
 
+    <!-- TOP BAR -->
     <div class="topbar">
-      <input placeholder="Search">
-      <div class="top-right">
-        <button class="new-task">+ New task</button>
-        <img src="profile.png" class="profile-pic" onclick="goProfile()">
-      </div>
+      <input type="text" placeholder="Search">
+      <button class="new-task-btn" onclick="openNewTask()">+ New task</button>
     </div>
 
-    <div class="grid">
-      <div class="card">📅 Calendar</div>
-      <div class="card">📋 My tasks</div>
-      <div class="card">🔥 My streaks</div>
-      <div class="card">📊 Activity + progress</div>
-    </div>
+    <!-- DASHBOARD CONTENT -->
+    <div class="card">📅 Calendar</div>
+    <div class="card">📋 My tasks</div>
+    <div class="card">🔥 My streaks</div>
+    <div class="card">📊 Activity + progress</div>
 
   </main>
 </div>
 
-<script>
-function goTasks(){ location.href="mytasks.html"; }
-function goProfile(){ location.href="profile.html"; }
-function logout(){
-  sessionStorage.removeItem("loggedIn");
-  location.href="login.html";
-}
-</script>
+<!-- ================= NEW TASK MODAL ================= -->
+<div id="newTaskModal" class="modal">
+  <div class="modal-content">
 
+    <h2>New Task</h2>
+
+    <input type="text" placeholder="Title">
+    <input type="text" placeholder="Notes">
+    <input type="url" placeholder="URL">
+    <input type="date">
+
+    <select>
+      <option>Stage</option>
+      <option>Not started</option>
+      <option>In progress</option>
+      <option>Completed</option>
+    </select>
+
+    <select>
+      <option>Priority</option>
+      <option>Low</option>
+      <option>Medium</option>
+      <option>High</option>
+    </select>
+
+    <input type="text" placeholder="Team">
+    <input type="text" placeholder="Assignee">
+
+    <div class="modal-actions">
+      <button onclick="closeNewTask()">Cancel</button>
+      <button class="yellow-btn">Add Task</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>checkLogin();</script>
 </body>
 </html>
