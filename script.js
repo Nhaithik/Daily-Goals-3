@@ -1,4 +1,4 @@
-// ================= LOGIN =================
+// ---------- LOGIN ----------
 function login() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -11,21 +11,20 @@ function login() {
   }
 }
 
-// ================= LOGOUT =================
-function logout() {
-  sessionStorage.removeItem("loggedIn");
-  window.location.href = "index.html";
-}
-
-// ================= AUTH CHECK =================
-// Call this on protected pages
+// ---------- CHECK LOGIN ----------
 function checkLogin() {
   if (!sessionStorage.getItem("loggedIn")) {
-    window.location.href = "index.html";
+    window.location.href = "login.html";
   }
 }
 
-// ================= NAVIGATION =================
+// ---------- LOGOUT ----------
+function logout() {
+  sessionStorage.removeItem("loggedIn");
+  window.location.href = "login.html";
+}
+
+// ---------- NAVIGATION ----------
 function goDashboard() {
   window.location.href = "dashboard.html";
 }
@@ -38,32 +37,17 @@ function goProfile() {
   window.location.href = "profile.html";
 }
 
-// ================= PROFILE SAVE =================
-function saveProfile() {
-  const name = document.getElementById("name").value;
-  localStorage.setItem("username", name);
-  alert("Profile saved successfully!");
+function goSettings() {
+  window.location.href = "settings.html";
 }
 
-// ================= LOAD PROFILE NAME =================
-function loadProfile() {
-  const savedName = localStorage.getItem("username");
-  if (savedName && document.getElementById("name")) {
-    document.getElementById("name").value = savedName;
-  }
-}
-
-// ================= PROFILE IMAGE PREVIEW =================
-function loadImage(event) {
-  const preview = document.getElementById("preview");
-  preview.src = URL.createObjectURL(event.target.files[0]);
-}
-// ================= NEW TASK MODAL =================
+// ---------- NEW TASK MODAL ----------
 function openNewTask() {
-  document.getElementById("newTaskModal").style.display = "block";
+  const modal = document.getElementById("newTaskModal");
+  if (modal) modal.style.display = "block";
 }
 
 function closeNewTask() {
-  document.getElementById("newTaskModal").style.display = "none";
+  const modal = document.getElementById("newTaskModal");
+  if (modal) modal.style.display = "none";
 }
-
