@@ -1,45 +1,118 @@
-body { margin:0; font-family:Arial; background:#f7f6f3; }
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-/* LOGIN */
-.login-wrapper{display:flex;height:100vh;}
-.login-image img{width:400px;}
-.login-card{margin:auto;background:#fff;padding:40px;border-radius:20px;}
+body {
+  margin: 0;
+  background: #f7f5f1;
+}
 
-/* DASHBOARD */
-.dashboard{display:flex;height:100vh;}
-.sidebar{width:220px;background:#fff;padding:20px;}
-.sidebar li{padding:10px;cursor:pointer;}
-.sidebar .active{background:#ffe600;border-radius:8px;}
-.main{flex:1;padding:20px;}
-.topbar{display:flex;justify-content:space-between;}
-.profile-pic{width:40px;border-radius:50%;}
-.card{background:#fff;padding:20px;border-radius:20px;margin-bottom:20px;}
-.new-task{background:#ffe600;border:none;padding:10px 20px;border-radius:20px;}
-.big-profile{width:120px;border-radius:20px;}
-.save-btn{background:#ffe600;border:none;padding:10px;border-radius:20px;}
-.task-table-full {
-  width: 100%;
-  border-collapse: collapse;
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
   background: white;
-  border-radius: 20px;
-  margin-bottom: 30px;
+  padding: 20px;
 }
 
-.task-table-full th {
-  text-align: left;
-  padding: 14px;
-  font-size: 13px;
-  color: #777;
-  border-bottom: 1px solid #eee;
+.sidebar h2 {
+  margin-bottom: 20px;
 }
 
-.task-table-full td {
-  padding: 14px;
-  border-bottom: 1px solid #eee;
+.sidebar ul {
+  list-style: none;
+  padding: 0;
 }
 
-.assignee {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+.sidebar li {
+  padding: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background: #ffe600;
+}
+
+/* MAIN */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.top-bar input {
+  width: 60%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.new-task-btn {
+  background: #ffe600;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  width: 420px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-content input,
+.modal-content select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.yellow-btn {
+  background: #ffe600;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
 }
