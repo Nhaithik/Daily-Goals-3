@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Daily Goals</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li onclick="goTasks()">My tasks</li>
+      <li>Notifications</li>
+      <li>Settings</li>
+      <li onclick="logout()">Log out</li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <div class="topbar">
+      <input placeholder="Search">
+      <div class="top-right">
+        <button class="new-task">+ New task</button>
+        <img src="profile.png" class="profile-pic" onclick="goProfile()">
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">📅 Calendar</div>
+      <div class="card">📋 My tasks</div>
+      <div class="card">🔥 My streaks</div>
+      <div class="card">📊 Activity + progress</div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+function goTasks(){ location.href="mytasks.html"; }
+function goProfile(){ location.href="profile.html"; }
+function logout(){
+  sessionStorage.removeItem("loggedIn");
+  location.href="login.html";
+}
+</script>
+
+</body>
+</html>
